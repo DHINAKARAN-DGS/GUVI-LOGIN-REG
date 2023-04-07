@@ -1,17 +1,3 @@
-const { Server } = require("socket.io");
-
-const io = new Server({
-  cors: {
-    origin: "http://127.0.0.1:5500",
-    methods: ["GET", "POST"],
-  },
-});
-
-io.on("connection", (socket) => {
-  // Socket codes...
-});
-
-io.listen(8000);
 function myFunction() {
   var email = document.getElementById("emailID");
   var pwd = document.getElementById("password");
@@ -26,6 +12,7 @@ function myFunction() {
           url: "https://guvitask23.000webhostapp.com/index.php?",
           data: "emailID=" + email + "&pwd=" + pwd,
           success: alert("S1"),
+          dataType: "json",
         });
       }
     }
