@@ -7,12 +7,14 @@ function myFunction() {
   if (email.value != "") {
     if (pwd.value != "") {
       if (pwd.value === rpwd.value) {
-        jQuery.ajax({
+        $.ajax({
           type: "POST",
           url: "https://guvitask23.000webhostapp.com/index.php?",
-          data: "emailID=" + email + "&pwd=" + pwd,
-          success: alert("S1"),
-          dataType: "json",
+          data: "emailID=" + email.value + "&pwd=" + pwd.value,
+          success: function (res) {
+            console.log(res);
+            alert(res);
+          },
         });
       }
     }
