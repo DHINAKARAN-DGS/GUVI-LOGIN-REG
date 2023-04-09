@@ -3,13 +3,13 @@ header('Access-Control-Allow-Origin: *');
 require '../vendor/autoload.php'; 
 $data = [];
 $servername = "localhost";
-$username = "root";
+$usernamed = "root";
 $password = "";
 $dbname = "GUVI";
 
 // Create connection
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $usernamed, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
@@ -18,6 +18,10 @@ if ($conn->connect_error) {
 
 $email = $_POST['emailID'];
 $password = $_POST['pwd'];
+$username = $_POST['name'];
+$dob=$_POST['dob'];
+$contact=$_POST['contact'];
+
 
 $stmt = $conn->prepare('SELECT 1 FROM user_data WHERE email=?');
 $stmt->bind_param('s', $email);
@@ -32,21 +36,26 @@ if ($exists) {
     $sttmnt->bind_param("ss", $email, $password);
     $sttmnt->execute();
 
-$mongo_db_url = "mongodb://localhost:27017";
-$mongo_db_name = "GUVI";
-$mongo_collection_name = "Profile_data";
+$url = "mongodb://localhost:27017";
+$db = "GUVI";
+$collection_name = "Profile_data";
 
-$client = new MongoDB\Client($mongo_db_url);
+$client = new MongoDB\Client($url);
 
 // Checking the status of connection request
 if (!$client) {
     echo "Connection to MongoDB Failed!";
-} 
+} else{
+    echo 'c';
+}
 
-$collection = $client->$mongo_db_name->$mongo_collection_name;
+$collection = $client->$db->$collection_name;
 
 try {
     $insertOneResult = $collection->insertOne([
+        'username'=>$username,
+        'dob' => $dob,
+        'contact' => $contact,
         'email' => $email,
     ]);
     echo "Inserted " . $insertOneResult->getInsertedCount() . " document(s)";

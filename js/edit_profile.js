@@ -1,9 +1,13 @@
+document.getElementById("emailID").placeholder = localStorage.getItem("emailID");
+if (localStorage.getItem("login") === false || localStorage.getItem("login") === null) {
+  location.href = "./login.html"
+}
+
 function edit() {
   var username = document.getElementById("username");
   var dob = document.getElementById("dob");
   var contact = document.getElementById("contact");
-  var email = document.getElementById("email");
-
+  var email = localStorage.getItem("emailID");
   if (
     email.value != "" &&
     username.value != "" &&
@@ -22,9 +26,12 @@ function edit() {
         "&contact=" +
         contact.value +
         "&email=" +
-        email.value,
+        email,
       success: function (res) {
         console.log(res);
+        if (res === "Inserted") {
+          location.href = "../guvi/profile.html";
+        }
       },
     });
   }

@@ -9,11 +9,16 @@ function myFunction() {
         data: "emailID=" + email.value + "&pwd=" + pwd.value,
         success: function (res) {
           console.log(res);
-          localStorage.setItem("login", true);
-          localStorage.setItem("emailID", email.value);
-          console.log(localStorage.getItem("login"));
-          alert(localStorage.getItem("login"));
-          location.href = "../guvi/profile.html";
+          if (res === "LOGIN") {
+            localStorage.setItem("login", true);
+            localStorage.setItem("emailID", email.value);
+            console.log(localStorage.getItem("login"));
+            alert(localStorage.getItem("login"));
+            location.href = "../guvi/profile.html";
+            session_start();
+          } else {
+            alert("Error " + res);
+          }
         },
       });
     }

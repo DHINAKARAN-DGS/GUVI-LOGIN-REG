@@ -26,7 +26,7 @@ $exists = (bool) $stmt->get_result()->fetch_row();
 if ($exists) {
   echo "LOGIN";
 } else {
-    echo "REGISTER PLEASE";
+    echo "REGISTER";
 }
 
 ?>
