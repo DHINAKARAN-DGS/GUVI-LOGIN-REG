@@ -1,0 +1,164 @@
+@font-face {
+  font-family: "poppins";
+  src: url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+}
+.nav-link {
+  color: rgba(7, 92, 7, 0.861) !important;
+  font: "poppins" !important;
+}
+.container {
+  position: absolute;
+  max-width: 800px;
+  height: 500px;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rightContent {
+  position: relative;
+  background: no-repeat; /*background image should be passed in html or js not in css okay*/
+  border-radius: 25px;
+  height: 100%;
+  padding: 25px;
+  color: rgb(192, 192, 192);
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+.rightContent_bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}
+.form {
+  align-items: center;
+  justify-content: center;
+}
+.leftContent {
+  position: relative;
+  background: #fff;
+  border-radius: 25px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 55px;
+}
+.leftContent header {
+  color: blueviolet;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 15%;
+  margin-bottom: 20px;
+}
+.row {
+  height: 100%;
+}
+.myCard {
+  position: relative;
+  background: #fff;
+  height: 100%;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+}
+.rightContent header {
+  color: #fff;
+  font-size: 44px;
+}
+.box {
+  position: relative;
+  margin: 20px;
+  margin-bottom: 100px;
+}
+
+.leftContent .input {
+  max-width: 230px;
+  border-radius: 5px;
+  padding: 10px;
+  outline: solid 0.5px;
+  border: none;
+}
+.leftContent .input:hover {
+  outline: solid blueviolet;
+}
+
+.button {
+  background: linear-gradient(45deg, #bb36fd, #9b00e8);
+  color: #fff;
+  width: 210px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+.logo {
+  width: 25%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #09d15e;
+  border-radius: 25px 0 25px 0;
+  padding: 2% 4% 2% 4%;
+/* okay ? */
+}
+.text-center .form {
+  justify-content: center;
+  align-items: center;
+}
+.footer {
+  text-align: center;
+}
+.login {
+  margin-top: 1.5%;
+  color: blueviolet;
+}
+.profileL {
+  position: relative;
+  background: #fff;
+  border-radius: 25px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+.profileL header {
+  color: blueviolet;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 3%;
+  margin-bottom: 20px;
+}
+.myCardP {
+  position: relative;
+  background: #fff;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+}
+.profileR {
+  position: relative;
+  background-image: linear-gradient(45deg, #f046ff, #9b00e8);
+  border-radius: 25px;
+  height: 100%;
+  padding: 25px;
+  color: rgb(192, 192, 192);
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+.nav-link {
+  margin-left: 2% !important;
+  padding-left: 2% !important;
+}
+.button:hover {
+  border: #000 1px solid;
+  transition: 0.1s;
+}

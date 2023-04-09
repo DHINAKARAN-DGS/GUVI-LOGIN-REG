@@ -1,11 +1,11 @@
 <?php error_reporting(0);
 header('Access-Control-Allow-Origin: *');
-require 'vendor/autoload.php';
+require '../vendor/autoload.php'; 
 $data = [];
 $servername = "localhost";
-$username = "id20571861_dhinakaran";
-$password = "YgX&G=1#Ymp(jTCu";
-$dbname = "id20571861_guvi_registration_database";
+$username = "root";
+$password = "";
+$dbname = "GUVI";
 
 // Create connection
 
@@ -32,21 +32,27 @@ if ($exists) {
     $sttmnt->bind_param("ss", $email, $password);
     $sttmnt->execute();
 
-    $db_url = 'mongodb+srv://dhinakarandgs23:ThilakKumar2009@cluster0.gleofif.mongodb.net/?retryWrites=true&w=majority';
-    $client = new MongoDB\Client($db_url);
+$mongo_db_url = "mongodb://localhost:27017";
+$mongo_db_name = "GUVI";
+$mongo_collection_name = "Profile_data";
 
-    // Checking the status of connection request
-    if (!$client) {
-      echo "Unable to connect to Database";
-    }
-    // Selecting the database
-    $db_name = $client->GUVI;
-    if (!$db_name) {
-      echo "guviInternship";
-    }else{
-      echo "error";
-    }
+$client = new MongoDB\Client($mongo_db_url);
 
+// Checking the status of connection request
+if (!$client) {
+    echo "Connection to MongoDB Failed!";
+} 
+
+$collection = $client->$mongo_db_name->$mongo_collection_name;
+
+try {
+    $insertOneResult = $collection->insertOne([
+        'email' => $email,
+    ]);
+    echo "Inserted " . $insertOneResult->getInsertedCount() . " document(s)";
+} catch (Exception $e) {
+    echo "Error inserting document: " . $e->getMessage();
+}
     
 }
 

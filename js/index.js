@@ -1,19 +1,25 @@
+alert(localStorage.getItem("login"));
+if (localStorage.getItem("login") === true) {
+  location.href = "./profile.html"
+}
+else {
+  localStorage.setItem("login", false);
+}
+
 function myFunction() {
   var email = document.getElementById("emailID");
   var pwd = document.getElementById("password");
   var rpwd = document.getElementById("repwd");
-  alert(email.value + " " + pwd.value + " " + rpwd.value + "aa");
-
   if (email.value != "") {
     if (pwd.value != "") {
       if (pwd.value === rpwd.value) {
         $.ajax({
           type: "POST",
-          url: "https://guvitask23.000webhostapp.com/index.php?",
+          url: "./php/index.php?",
           data: "emailID=" + email.value + "&pwd=" + pwd.value,
           success: function (res) {
             console.log(res);
-            alert(res);
+            location.href = "../guvi/login.html";
           },
         });
       }
