@@ -17,8 +17,8 @@ then good to go
 ![Screenshot (130)](https://user-images.githubusercontent.com/71032429/230820807-32a9317a-deb9-44e0-9cb2-d934752bdcae.png)
 # 2.Login
 ![Screenshot (131)](https://user-images.githubusercontent.com/71032429/230820817-550b387f-7826-4dcb-9df3-a85ac3499262.png)
-![Screenshot (132)](https://user-images.githubusercontent.com/71032429/230820626-6156541b-ebb6-4279-865c-96614b138f20.png)
 # 3.Profile
+![Screenshot (132)](https://user-images.githubusercontent.com/71032429/230820626-6156541b-ebb6-4279-865c-96614b138f20.png)
 ![Screenshot (133)](https://user-images.githubusercontent.com/71032429/230820872-8aefbd71-5f77-4588-91b5-3b95138567a0.png)
 # 4.Edit Profile
 ![Screenshot (134)](https://user-images.githubusercontent.com/71032429/230820658-0e7a6424-3d4c-4fee-8a5d-ec7f1a8ce188.png)
